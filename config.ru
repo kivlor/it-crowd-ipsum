@@ -1,6 +1,6 @@
 require	'bundler/setup'
 Bundler.require(:default)
 
-require './itcrowdipsum.rb'
+require './app.rb'
 
 run Cuba
