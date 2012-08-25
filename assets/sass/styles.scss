@@ -58,7 +58,9 @@ body {
 
 #wrap {
 	margin: 25px auto;
-	width: 960px;
+	width: 90%;
+	max-width: 960px;
+	min-width: 460px;
 	
 	header {
 		margin: 0 20px;
