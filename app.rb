@@ -2,42 +2,40 @@ Cuba.use		Rack::Session::Cookie
 Cuba.plugin		Cuba::Render
 
 Cuba.define do
-	#generate lipsum
-	def generate_lisum(count = 5)
-		quotes = [
-			'Hello, IT. Have you tried turning it off and on again? ',
-			'Uh... okay, well, the button on the side, is it glowing? ',
-			'Yeah, you need to turn it on... uh, the button turns it on. ',
-			'Yeah, you do know how a button works don\'t you? No, not on clothes. ',
-			'Hello, IT. Have you tried forcing an unexpected reboot? ',
-			'No, no there you go, no there you go. I just heard it come on. ',
-			'No, no, that\'s the music you heard when it come on. ',
-			'No, that\'s the music you hear when... I\'m sorry are you from the past?',
-			'See the driver hooks a function by patching the system call table, so its not safe to unload it unless another thread\'s about to jump in there and do its stuff, and you don\'t want to end up in the middle of invalid memory!',
-			'Oh really? Then why don\'t you come down and make me then.',
-			'Huh, what you think I\'m afraid of you? I\'m not afraid of you.',
-			'You can come down here any time and I\'ll be waiting for you! [slams down phone] That told her!',
-		]
+
+	# generate lipsum
+	def generate_lipsum(count = 5)
+		# get the quotes from the lipsum files
+		quotes = []
 		
+		lipsum = File.new('./lipsum.txt', 'r')
+		lipsum.each do |quote|
+			quotes << quote
+		end
+		lipsum.close
+		
+		# create the out string
 		out = ''
 		
 		(0..count).each do
-			out += '<p>'
+			out << '<p>'
 		
-			(0..6).each do
-				out += quotes.sample			
+			(0..6).each do |i|
+				out << quotes.sample << ' '
 			end
 			
-			out += '</p>'
+			out << '</p>'
 		end
 		
+		# done!
 		out
 	end
 	
-	#home!
+	# only one place to be, home!
 	on get do
 		on root do
-			res.write render("views/home.erb", lipsum: generate_lisum())
+			res.write render("views/home.erb", lipsum: generate_lipsum())
 		end
 	end
+	
 end
