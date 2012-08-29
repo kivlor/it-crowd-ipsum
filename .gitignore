@@ -4,4 +4,4 @@ tmp
 .DS_store
 
 # Gemfile.lock
-Gemfile.lock
+#Gemfile.lock
