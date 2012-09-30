@@ -10,21 +10,21 @@ Cuba.define do
 		
 		lipsum = File.new('./lipsum.txt', 'r')
 		lipsum.each do |quote|
-			quotes << quote
+			quotes << quote.strip
 		end
 		lipsum.close
 		
 		# create the out string
-		out = ''
+		out = []
 		
 		(0..count).each do
-			out << '<p>'
+			paragraph = ''
 		
 			(0..6).each do |i|
-				out << quotes.sample << ' '
+				paragraph << quotes.sample << ' '
 			end
 			
-			out << '</p>'
+			out << paragraph
 		end
 		
 		# done!
