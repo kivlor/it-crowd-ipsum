@@ -95,7 +95,10 @@ body { background: #222; color: #eee; }
 #wrap header h2 { color: #f93; font: 500 14px/1.2em sans-serif; }
 #wrap section { margin: 0 20px; padding: 20px; background: #eee; color: #111; border-radius: 3px; }
 #wrap section p { margin: 0 0 20px; padding: 0; font: 300 16px/1.2em Georgia, serif; }
-#wrap section p:last-child { margin: 0; }
+#wrap section menu { display: block; margin: 0; padding: 0; }
+#wrap section menu button { display: inline-block; margin: 0; padding: 5px 10px; background: #f93; color: #fff; border: none; border-radius: 5px; }
+#wrap section menu textarea { position: absolute; left: -9000px; top: -9000px; }
+#wrap section menu span { display: none; position: fixed; top: 50%; left: 50%; margin-left: -150px; padding: 15px 0; width: 300px; background: rgba(0, 0, 0, 0.9); color: #fff; border-radius: 5px; text-align: center; }
 #wrap footer { margin: 0 20px; padding: 20px 0; }
 #wrap footer p { margin: 0; padding: 0; color: #666; font: 500 12px/1.2em sans-serif; }
 #wrap footer p a, #wrap footer p a:visited, #wrap footer p a:hover { color: #888; }

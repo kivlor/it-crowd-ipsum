@@ -93,9 +93,45 @@ body {
 			margin: 0 0 20px;
 			padding: 0;
 			font: 300 16px/1.2em Georgia, serif;
+		}
+		
+		menu {
+			display: block;
+			margin: 0;
+			padding: 0;
 			
-			&:last-child {
+			button {
+				display: inline-block;
 				margin: 0;
+				padding: 5px 10px;
+				
+				background: #f93;
+				color: #fff;
+				border: none;
+				border-radius: 5px;
+			}
+			
+			textarea {
+				position: absolute;
+				left: -9000px;
+				top: -9000px;
+			}
+			
+			span {
+				display: none;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				
+				margin-left: -150px;
+				padding: 15px 0;
+				width: 300px;
+				
+				background: rgba(0,0,0,0.9);
+				color: #fff;
+				border-radius: 5px;
+				
+				text-align: center;
 			}
 		}
 	}
