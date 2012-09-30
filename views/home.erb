@@ -5,6 +5,7 @@
 		<title>IT Crowd Ipsum</title>
 		
 		<link href="https://s3.amazonaws.com/itcrowdipsum/styles.css" rel="stylesheet" media="all">
+		<script src="http://code.jquery.com/jquery.min.js"></script>
 	</head>
 	<body>
 		<div id="wrap">
@@ -14,7 +15,24 @@
 			</header>
 			
 			<section>
-				<%=lipsum %>
+				<% lipsum.each do |paragraph| %>
+				<p>
+					<%=paragraph %>
+				</p>
+				<% end %>
+				
+				<menu>
+					<button type="button" id="copy">Copy?</button>
+<textarea id="text">
+<% lipsum.each do |paragraph| %>
+<%=paragraph %>
+
+
+<% end %>
+</textarea>
+					
+					<span id="popup">Now press CMD + C / CTRL + C</span>
+				</menu>
 			</section>
 			
 			<footer>
@@ -23,5 +41,18 @@
 				</p>
 			</footer>
 		</div>
+		
+		<script type="text/javascript">
+			jQuery(function($){
+				// copy?
+				$('#copy').on('click', function(){
+					// select the text
+					$('#text').select();
+					
+					// show the popup
+					$('#popup').fadeIn(200).delay(2000).fadeOut(200);
+				});
+			});
+		</script>
 	</body>
 </html>
