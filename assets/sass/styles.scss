@@ -52,7 +52,7 @@ html, body {
 }
 
 body {
-	background: #222;
+	background: #181d22 url('https://s3.amazonaws.com/itcrowdipsum/noisy_net.png');
 	color: #eee;
 }
 
@@ -107,8 +107,14 @@ body {
 				
 				background: #f93;
 				color: #fff;
-				border: none;
+				border: 1px solid darken(#f93, 10);
 				border-radius: 5px;
+				
+				text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+				
+				&:hover {
+					background: lighten(#f93, 5);
+				}
 			}
 			
 			textarea {
