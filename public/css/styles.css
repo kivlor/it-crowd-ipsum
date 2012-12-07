@@ -84,14 +84,14 @@ textarea { overflow: auto; vertical-align: top; }
 
 table { border-collapse: collapse; border-spacing: 0; }
 
-html, body { margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; font-family: 'itcrowd', sans-serif; }
 
-body { background: #181d22 url("https://s3.amazonaws.com/itcrowdipsum/noisy_net.png"); color: #eee; }
+body { background: #181d22 url("https://s3.amazonaws.com/itcrowdipsum/img/noisy_net.png"); color: #eee; }
 
 #wrap { margin: 25px auto; width: 90%; max-width: 960px; min-width: 460px; }
 #wrap header { margin: 0 20px; padding-bottom: 20px; }
-#wrap header h1, #wrap header h2 { margin: 0 0 0.2em; padding: 0; }
-#wrap header h1 { color: #f60; text-transform: uppercase; }
+#wrap header h1, #wrap header h2 { margin: 0 0 0.2em; padding: 0; text-align: center; }
+#wrap header h1 { color: #f60; font-size: 52px; }
 #wrap header h2 { color: #f93; font: 500 14px/1.2em sans-serif; }
 #wrap section { margin: 0 20px; padding: 20px; background: #eee; color: #111; border-radius: 3px; }
 #wrap section p { margin: 0 0 20px; padding: 0; font: 300 16px/1.2em Georgia, serif; }
