@@ -20,7 +20,7 @@ Cuba.define do
 		(0..count).each do
 			paragraph = ''
 		
-			(0..6).each do |i|
+			(0..6).each do
 				paragraph << quotes.sample << ' '
 			end
 			
