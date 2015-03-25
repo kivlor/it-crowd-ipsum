@@ -4,10 +4,10 @@ Font Custom - icon webfonts made simple
 
 @font-face {
   font-family: "itcrowd";
-  src: url("https://s3.amazonaws.com/itcrowdipsum/fonts/itcrowd.eot?#iefix") format("embedded-opentype"),
-       url("https://s3.amazonaws.com/itcrowdipsum/fonts/itcrowd.woff") format("woff"),
-       url("https://s3.amazonaws.com/itcrowdipsum/fonts/itcrowd.ttf") format("truetype"),
-       url("https://s3.amazonaws.com/itcrowdipsum/fonts/itcrowd.svg#itcrowd") format("svg");
+  src: url("/fonts/itcrowd.eot?#iefix") format("embedded-opentype"),
+       url("/fonts/itcrowd.woff") format("woff"),
+       url("/fonts/itcrowd.ttf") format("truetype"),
+       url("/fonts/itcrowd.svg#itcrowd") format("svg");
   font-weight: normal;
   font-style: normal;
 }
