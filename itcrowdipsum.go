@@ -1,9 +1,9 @@
-package main
+package itcrowdipsum
 
 import (
     "html/template"
-	"math/rand"
-	"net/http"
+    "math/rand"
+    "net/http"
 )
 
 // these are the phrases we pick from when generating lipsum
@@ -80,8 +80,8 @@ var index = `
 
 // right up main street
 func main() {
-	http.HandleFunc("/", root)
-	http.ListenAndServe(":3000", nil)
+    http.HandleFunc("/", root)
+    http.ListenAndServe(":3000", nil)
 }
 
 // root is the handler for requests to "/"
@@ -96,30 +96,30 @@ func root(w http.ResponseWriter, r *http.Request) {
     data := struct {
         Paragraphs []string
     }{
-        Paragraphs: generateLipsum(5),
+        Paragraphs: GenerateLipsum(5),
     }
 
     // execute the template data
-	tmpl.Execute(w, data)
+    tmpl.Execute(w, data)
 }
 
 // generateLipsum will create a number of paragraphs using randome phrases
-func generateLipsum(count int) []string {
-	var lipsum []string
+func GenerateLipsum(count int) []string {
+    var lipsum []string
     var paragraph string
 
     // loop the paragraph count
-	for i := 0; i < count; i++ {
+    for i := 0; i < count; i++ {
         paragraph = ""
         // about 6 phrases makes a goo paragrpah
         for j := 0; j < 6; j++ {
-			paragraph += phrases[rand.Intn(len(phrases))];
-		}
+            paragraph += phrases[rand.Intn(len(phrases))]
+        }
 
         // append our paragraph to lipsum
         lipsum = append(lipsum, paragraph)
-	}
+    }
 
     // return lipsum
-	return lipsum
+    return lipsum
 }
