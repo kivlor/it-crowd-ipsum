@@ -1,1 +1,1 @@
-web: itcrowdipsum
+web: ./itcrowdipsum
