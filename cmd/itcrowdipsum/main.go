@@ -70,20 +70,48 @@ var index = `
     <head>
         <meta charset="utf-8">
         <title>IT Crowd Ipsum</title>
-        <link href="http://itcrowdisum.com/css/styles.css" rel="stylesheet" media="all">
-        <link href="http://itcrowdisum.com/css/icons.css" rel="stylesheet" media="all">
+        <style type="text/css">
+            article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+            html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+            body { margin: 0; }
+            body, button, input, select, textarea { font-family: sans-serif; }
+            a { color: #00e; }
+            a:visited { color: #551a8b; }
+            a:focus { outline: thin dotted; }
+            a:hover, a:active { outline: 0; }
+            button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+            button, input { line-height: normal; *overflow: visible; }
+            button { cursor: pointer; -webkit-appearance: button; }
+            button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+            html, body { margin: 0; padding: 0; font-family: sans-serif; }
+            body { background: #181d22 url("https://s3.amazonaws.com/itcrowdipsum/img/noisy_net.png"); color: #eee; }
+            #wrap { margin: 25px auto; width: 90%; max-width: 960px; min-width: 460px; }
+            #wrap header { margin: 0 20px; padding-bottom: 20px; }
+            #wrap header h1, #wrap header h2 { margin: 0 0 0.2em; padding: 0; text-align: center; }
+            #wrap header h1 { color: #f60; font-size: 52px; }
+            #wrap header h2 { color: #f93; font: 500 14px/1.2em sans-serif; }
+            #wrap section { margin: 0 20px; padding: 20px; background: #eee; color: #111; border-radius: 3px; }
+            #wrap section p { margin: 0 0 20px; padding: 0; font: 300 16px/1.2em Georgia, serif; }
+            #wrap section menu { display: block; margin: 0; padding: 0; }
+            #wrap section menu button { display: inline-block; margin: 0; padding: 5px 10px; background: #f93; color: #fff; border: 1px solid #ff7f00; border-radius: 5px; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); }
+            #wrap section menu button:hover { background: #ffa64d; }
+            #wrap section menu textarea { position: absolute; left: -9000px; top: -9000px; }
+            #wrap section menu span { display: none; position: fixed; top: 50%; left: 50%; margin-left: -150px; padding: 15px 0; width: 300px; background: rgba(0, 0, 0, 0.9); color: #fff; border-radius: 5px; text-align: center; }
+            #wrap footer { margin: 0 20px; padding: 20px 0; }
+            #wrap footer p { margin: 0; padding: 0; color: #666; font: 500 12px/1.2em sans-serif; }
+            #wrap footer p a, #wrap footer p a:visited, #wrap footer p a:hover { color: #888; }
+        </style>
         <script src="http://code.jquery.com/jquery.min.js"></script>
     </head>
     <body>
         <div id="wrap">
             <header>
-                <h1><span class="icon-roy"></span> <span class="icon-jen"></span> <span class="icon-moss"></span></h1>
+                <h1>It Crowd Ipsum</h1>
                 <h2>Placeholder text taken from <em>The IT Crowd</em></h2>
             </header>
             <section>
                 {{range .Paragraphs}}<p>{{ . }}</p>{{ end }}
-                
-                <!--<menu>
+                <menu>
                 <textarea id="text">
 {{range .Paragraphs}}{{ . }}
 
@@ -91,25 +119,14 @@ var index = `
 </textarea>
                     <button type="button" id="copy">Copy?</button>                    
                     <span id="popup">Now press CMD + C / CTRL + C</span>
-                </menu>-->
+                </menu>
             </section>
             <footer>
-                <p>
-                    Inspired by <a href="http://bluthipsum.com">Bluth Ipsum</a>. Made by <a href="http://kivlor.com">Kivlor</a>
-                </p>
+                <p>Inspired by <a href="http://bluthipsum.com">Bluth Ipsum</a>. Made by <a href="http://kivlor.com">Kivlor</a></p>
             </footer>
         </div>
         <script type="text/javascript">
-            /*jQuery(function($){
-                // copy?
-                $('#copy').on('click', function(){
-                    // select the text
-                    $('#text').select();
-
-                    // show the popup
-                    $('#popup').fadeIn(200).delay(2000).fadeOut(200);
-                });
-            });*/
+            jQuery(function($){$('#copy').on('click', function(){ $('#text').select(); $('#popup').fadeIn(200).delay(2000).fadeOut(200); });});
         </script>
     </body>
 </html>
