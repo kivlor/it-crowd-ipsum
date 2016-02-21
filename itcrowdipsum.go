@@ -4,6 +4,7 @@ import (
 	"html/template"
 	"math/rand"
 	"net/http"
+    "os"
 )
 
 // these are the phrases we pick from when generating lipsum
@@ -116,8 +117,15 @@ var index = `
 
 // right up main street
 func main() {
+    // make sure we have a port
+    port := os.Getenv("PORT")
+
+    if port == "" {
+        panic("unable to determine port")
+    }
+
 	http.HandleFunc("/", root)
-	http.ListenAndServe(":3000", nil)
+	http.ListenAndServe(":" + port, nil)
 }
 
 // root is the handler for requests to "/"
