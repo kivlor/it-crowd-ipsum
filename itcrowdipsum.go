@@ -1,4 +1,4 @@
-package itcrowdipsum
+package main
 
 import (
     "html/template"
