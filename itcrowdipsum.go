@@ -82,7 +82,7 @@ var index = `
             <section>
                 {{range .Paragraphs}}<p>{{ . }}</p>{{ end }}
                 
-                <menu>
+                <!--<menu>
                 <textarea id="text">
 {{range .Paragraphs}}{{ . }}
 
@@ -90,7 +90,7 @@ var index = `
 </textarea>
                     <button type="button" id="copy">Copy?</button>                    
                     <span id="popup">Now press CMD + C / CTRL + C</span>
-                </menu>
+                </menu>-->
             </section>
             <footer>
                 <p>
@@ -99,7 +99,7 @@ var index = `
             </footer>
         </div>
         <script type="text/javascript">
-            jQuery(function($){
+            /*jQuery(function($){
                 // copy?
                 $('#copy').on('click', function(){
                     // select the text
@@ -108,7 +108,7 @@ var index = `
                     // show the popup
                     $('#popup').fadeIn(200).delay(2000).fadeOut(200);
                 });
-            });
+            });*/
         </script>
     </body>
 </html>
