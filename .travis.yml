@@ -8,6 +8,6 @@ install:
   - go get -u github.com/golang/lint/golint
 
 script:
-  - go test -v
-  - test -z "$(golint . | tee /dev/stderr)"
-  - test -z "$(gofmt -e -l . | tee /dev/stderr)"
+  - go test -v ./cmd/itcrowdipsum
+  - test -z "$(golint ./cmd/itcrowdipsum | tee /dev/stderr)"
+  - test -z "$(gofmt -e -l ./cmd/itcrowdipsum | tee /dev/stderr)"
