@@ -175,6 +175,7 @@ func GenerateLipsum(count int) []string {
 		// about 6 phrases makes a goo paragrpah
 		for j := 0; j < 6; j++ {
 			paragraph += phrases[rand.Intn(len(phrases))]
+			paragraph += " "
 		}
 
 		// append our paragraph to lipsum
