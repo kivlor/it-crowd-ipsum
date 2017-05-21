@@ -7,10 +7,14 @@ go:
 install:
   - go get -u github.com/golang/lint/golint
 
-script:
-  - go test -v ./cmd/itcrowdipsum
-  - test -z "$(golint ./cmd/itcrowdipsum | tee /dev/stderr)"
-  - test -z "$(gofmt -e -l ./cmd/itcrowdipsum | tee /dev/stderr)"
+jobs:
+  include:
+    - stage: lint
+      script:
+        - test -z "$(golint ./cmd/itcrowdipsum | tee /dev/stderr)"
+        - test -z "$(golint ./cmd/itcrowdipsum | tee /dev/stderr)"
+    - stage: test
+      script: go test -v ./cmd/itcrowdipsum
 
 deploy:
   provider: heroku
