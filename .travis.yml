@@ -2,15 +2,14 @@ language: go
 
 go: 1.8
 
-# install:
-#   - go get -u github.com/golang/lint/golint
+install:
+  - go get -u github.com/golang/lint/golint
 
 jobs:
   include:
-    # - stage: test
-    #   script: test -z "$(golint ./cmd/itcrowdipsum | tee /dev/stderr)"
-
-    - stage: fmt
+    - stage: test
+      script: test -z "$(golint ./cmd/itcrowdipsum | tee /dev/stderr)"
+    - stage: test
       install: skip
       script: test -z "$(gofmt -e -l ./cmd/itcrowdipsum | tee /dev/stderr)"
     - stage: test
