@@ -9,14 +9,15 @@ install:
 jobs:
   include:
     - stage: lint
-      script:
-        - test -z "$(golint ./cmd/itcrowdipsum | tee /dev/stderr)"
-        - test -z "$(golint ./cmd/itcrowdipsum | tee /dev/stderr)"
+      script: test -z "$(golint ./cmd/itcrowdipsum | tee /dev/stderr)"
+    - stage: lint
+      script: test -z "$(golint ./cmd/itcrowdipsum | tee /dev/stderr)"
     - stage: test
       script: go test -v ./cmd/itcrowdipsum
-
-deploy:
-  provider: heroku
-  api_key:
-    secure: "oYsFLQyWm3DfZ94hFUstgVCzvuUYFRv/Vvo5bnWlbAmz+PsqWEkcNWJAGSHvbdu4fn5N0EOPZUWLH5fa51kbYVlfihrtuPFFWbdqZR4kglbAJvyIa3dGXAX2DI20sIxOcTe7uV8lrjiui6/ezT3QSRYDzGgANlpQtws1Q1/+fE/c1Tv8JfwUmxOWqRfox8f0+vf/aZiiaC/svExU1JbIwSYVFJB5cpCnpYGSGwygGtS7rz6OcZLcObGgEbPKJYdSowj2sbhJMxtQkIriALiORIeBhWB0wPA1QRdDMSeaTXvVCpRs86sQCaxZ2Ze9lGtPEGSjL2GyxsbrbmVtluxD76xppl6VwdJpPiLqKNj4zr2iThWslq1KW/ZR5Ux0C4sGx/iJDbGCgQzgbmbeW50B/5LzWuAYnBo4zTM6ViGTfw+54nbqH0v++fqTuUwLhZXRWA6FrHI/uTJE47zqC+O1Hnd2V0l8lksNXf3I07l4Wq2NAC/ms1rK58AQhgM6ghpQwpHIucVlM53KkeXSgvg2Q862CAO9lTp7xKQuXHUnzYKwWq3CwFoywat5KAjqI2c4L+V9gk8mw9p05kuqtyLvqIrDxvEmZ4mCoPXpfSWB5OIIgazs6jZIKRQidxGANNOnnCfi5z9Fk2FfbYheVpw3up+GElesNgIlKM3AeA+VaDU="
-  app: itcrowdipsum
+    - stage: deploy
+      script: skip
+      deploy:
+        provider: heroku
+        api_key:
+          secure: "oYsFLQyWm3DfZ94hFUstgVCzvuUYFRv/Vvo5bnWlbAmz+PsqWEkcNWJAGSHvbdu4fn5N0EOPZUWLH5fa51kbYVlfihrtuPFFWbdqZR4kglbAJvyIa3dGXAX2DI20sIxOcTe7uV8lrjiui6/ezT3QSRYDzGgANlpQtws1Q1/+fE/c1Tv8JfwUmxOWqRfox8f0+vf/aZiiaC/svExU1JbIwSYVFJB5cpCnpYGSGwygGtS7rz6OcZLcObGgEbPKJYdSowj2sbhJMxtQkIriALiORIeBhWB0wPA1QRdDMSeaTXvVCpRs86sQCaxZ2Ze9lGtPEGSjL2GyxsbrbmVtluxD76xppl6VwdJpPiLqKNj4zr2iThWslq1KW/ZR5Ux0C4sGx/iJDbGCgQzgbmbeW50B/5LzWuAYnBo4zTM6ViGTfw+54nbqH0v++fqTuUwLhZXRWA6FrHI/uTJE47zqC+O1Hnd2V0l8lksNXf3I07l4Wq2NAC/ms1rK58AQhgM6ghpQwpHIucVlM53KkeXSgvg2Q862CAO9lTp7xKQuXHUnzYKwWq3CwFoywat5KAjqI2c4L+V9gk8mw9p05kuqtyLvqIrDxvEmZ4mCoPXpfSWB5OIIgazs6jZIKRQidxGANNOnnCfi5z9Fk2FfbYheVpw3up+GElesNgIlKM3AeA+VaDU="
+        app: itcrowdipsum
