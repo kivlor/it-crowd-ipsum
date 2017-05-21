@@ -69,7 +69,7 @@ var index = `
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>IT Crowd Ipsum</title>
+        <title>It Crowd Ipsum</title>
         <style type="text/css">
             article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
             html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
@@ -107,7 +107,7 @@ var index = `
         <div id="wrap">
             <header>
                 <h1>It Crowd Ipsum</h1>
-                <h2>Placeholder text taken from <em>The IT Crowd</em></h2>
+                <h2>Placeholder text taken from <em>The It Crowd</em></h2>
             </header>
             <section>
                 {{range .Paragraphs}}<p>{{ . }}</p>{{ end }}
