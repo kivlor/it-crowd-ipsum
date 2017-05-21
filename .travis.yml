@@ -10,11 +10,17 @@ jobs:
   include:
     - stage: test
       script: test -z "$(golint ./cmd/itcrowdipsum | tee /dev/stderr)"
+
     - stage: test
-      script: test -z "$(golint ./cmd/itcrowdipsum | tee /dev/stderr)"
+      install: skip
+      script: test -z "$(gofmt -e -l ./cmd/itcrowdipsum | tee /dev/stderr)"
+
     - stage: test
+      install: skip
       script: go test -v ./cmd/itcrowdipsum
+
     - stage: deploy
+      install: skip
       script: skip
       deploy:
         provider: heroku
