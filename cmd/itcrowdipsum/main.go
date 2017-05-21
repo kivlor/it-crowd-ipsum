@@ -87,16 +87,16 @@ var index = `
             body { background: #181d22 url("https://s3.amazonaws.com/itcrowdipsum/img/noisy_net.png"); color: #eee; }
             #wrap { margin: 25px auto; width: 90%; max-width: 960px; min-width: 460px; }
             #wrap header { margin: 0 20px; padding-bottom: 20px; }
-            #wrap header h1, #wrap header h2 { margin: 0 0 0.2em; padding: 0; text-align: center; }
+            #wrap header h1, #wrap header h2 { margin: 0 0 0.2em; padding: 0; text-align: center; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.75); }
             #wrap header h1 { color: #f60; font-size: 52px; }
-            #wrap header h2 { color: #f93; font: 500 14px/1.2em sans-serif; }
+            #wrap header h2 { color: #f93; font: 500 14px/1.2em sans-serif; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.75); }
             #wrap section { margin: 0 20px; padding: 20px; background: #eee; color: #111; border-radius: 3px; }
-            #wrap section p { margin: 0 0 20px; padding: 0; font: 300 16px/1.2em Georgia, serif; }
+            #wrap section p { margin: 0 0 20px; padding: 0; font: 300 18px/1.4em Georgia, serif; }
             #wrap section menu { display: block; margin: 0; padding: 0; }
-            #wrap section menu button { display: inline-block; margin: 0; padding: 5px 10px; background: #f93; color: #fff; border: 1px solid #ff7f00; border-radius: 5px; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); }
-            #wrap section menu button:hover { background: #ffa64d; }
+            #wrap section menu button { display: inline-block; margin: 0; padding: 5px 10px; background: #ff7f00; color: #fff; border: 1px solid #ff7f00; border-radius: 5px; }
+            #wrap section menu button:hover { background: #f93; }
             #wrap section menu textarea { position: absolute; left: -9000px; top: -9000px; }
-            #wrap section menu span { display: none; position: fixed; top: 50%; left: 50%; margin-left: -150px; padding: 15px 0; width: 300px; background: rgba(0, 0, 0, 0.9); color: #fff; border-radius: 5px; text-align: center; }
+            #wrap section menu span { display: none; position: fixed; top: 200px; left: 50%; margin-left: -150px; padding: 20px 0; width: 300px; background: rgba(0, 0, 0, 0.85); color: #fff; border-radius: 5px; font-size: 18px; text-align: center; }
             #wrap footer { margin: 0 20px; padding: 20px 0; }
             #wrap footer p { margin: 0; padding: 0; color: #666; font: 500 12px/1.2em sans-serif; }
             #wrap footer p a, #wrap footer p a:visited, #wrap footer p a:hover { color: #888; }
