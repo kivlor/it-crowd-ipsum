@@ -8,9 +8,9 @@ install:
 
 jobs:
   include:
-    - stage: lint
+    - stage: test
       script: test -z "$(golint ./cmd/itcrowdipsum | tee /dev/stderr)"
-    - stage: lint
+    - stage: test
       script: test -z "$(golint ./cmd/itcrowdipsum | tee /dev/stderr)"
     - stage: test
       script: go test -v ./cmd/itcrowdipsum
